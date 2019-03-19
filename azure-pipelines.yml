@@ -10,6 +10,7 @@ variables:
   buildConfiguration: 'Release'
 
 steps:
+# needed to run dotnetsay
 - task: DotNetCoreInstaller@0
   displayName: Install .NET Core SDK
   name: install_dotnetcore_sdk
@@ -18,8 +19,10 @@ steps:
     packageType: 'sdk'
     version: '2.2.101'
 
+# produces some nice ascii art in build output
 - script: dotnet tool install -g dotnetsay
 - script: dotnetsay
+
 - script: |
     dotnet build --configuration $(buildConfiguration)
     dotnet test dotnetcore-tests --configuration $(buildConfiguration) --logger trx
@@ -32,3 +35,10 @@ steps:
     testResultsFiles: '**/*.trx'
 
 - task: PublishBuildArtifacts@1
+
+- task: DotNetCoreCLI@2
+  inputs:
+    command: publish
+    publishWebProjects: True
+    arguments: '--configuration $(BuildConfiguration) --output $(Build.ArtifactStagingDirectory)'
+    zipAfterPublish: True
