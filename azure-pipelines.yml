@@ -36,9 +36,18 @@ steps:
 
 - task: PublishBuildArtifacts@1
 
+# is this superfluous?
+# I think not.. this zip is needed for web dpeloy
 - task: DotNetCoreCLI@2
   inputs:
     command: publish
     publishWebProjects: True
     arguments: '--configuration $(BuildConfiguration) --output $(Build.ArtifactStagingDirectory)'
     zipAfterPublish: True
+
+## Deploy to Azure App Service
+- task: AzureRmWebAppDeployment@3
+  inputs:
+    azureSubscription: 'pipelines-dotnet-core-connection'
+    WebAppName: 'pipelinesdm'>
+    Package: $(System.ArtifactsDirectory)/**/*.zip
