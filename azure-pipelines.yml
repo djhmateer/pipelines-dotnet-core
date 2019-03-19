@@ -8,6 +8,15 @@ pool:
 variables:
   buildConfiguration: 'Release'
 
+- task: DotNetCoreInstaller@0
+  displayName: Install .NET Core SDK
+  name: install_dotnetcore_sdk
+  enabled: true
+  inputs:
+    packageType: 'sdk'
+    version: '2.2.101'
+
+
 steps:
 - script: dotnet tool install -g dotnetsay
 - script: dotnetsay
