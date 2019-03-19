@@ -21,7 +21,8 @@ steps:
     version: '2.2.101'
 
 # produces some nice ascii art in build output
-- script: dotnet tool install -g dotnetsay
+# on my local cached build agent this will error as it is already there
+#- script: dotnet tool install -g dotnetsay
 - script: dotnetsay
 
 - script: |
