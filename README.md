@@ -1,7 +1,7 @@
 # Sample ASP.NET Core application for Azure Pipelines docs
 Build status from this repo!
 
-[![Build Status](https://dev.azure.com/penhemingway/pipelines-dotnet-core/_apis/build/status/djhmateer.pipelines-dotnet-core?branchName=master)](https://dev.azure.com/penhemingway/pipelines-dotnet-core/_build/latest?definitionId=4&branchName=master)
+[![Build Status](https://djhmateer.visualstudio.com/pipelines-dotnet-core/_apis/build/status/pipelines-dotnet-core-CI?branchName=master)](https://djhmateer.visualstudio.com/pipelines-dotnet-core/_build/latest?definitionId=7&branchName=master)
 
 For information on how to use this repository, see [.NET Core](https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core).
 
