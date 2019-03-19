@@ -47,7 +47,7 @@ steps:
     arguments: '--configuration $(BuildConfiguration) --output $(Build.ArtifactStagingDirectory)'
     zipAfterPublish: True
 
-## Deploy to an existing Azure App Service i
+## Deploy to an existing Azure App Service k
 - task: AzureRmWebAppDeployment@3
   inputs:
     azureSubscription: 'pipelines-dotnet-core-connection'
