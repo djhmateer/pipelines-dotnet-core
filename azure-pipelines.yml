@@ -49,5 +49,5 @@ steps:
 - task: AzureRmWebAppDeployment@3
   inputs:
     azureSubscription: 'pipelines-dotnet-core-connection'
-    WebAppName: 'pipelinesdm'>
+    WebAppName: 'pipelinesdm'
     Package: $(System.ArtifactsDirectory)/**/*.zip
