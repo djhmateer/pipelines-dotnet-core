@@ -9,6 +9,8 @@ variables:
   buildConfiguration: 'Release'
 
 steps:
+- script: dotnet tool install -g dotnetsay
+- script: dotnetsay
 - script: |
     dotnet build --configuration $(buildConfiguration)
     dotnet test dotnetcore-tests --configuration $(buildConfiguration) --logger trx
