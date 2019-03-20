@@ -16,7 +16,7 @@ variables:
 steps:
 # needed to run dotnetsay
 - task: DotNetCoreInstaller@0
- displayName: Install .NET Core SDK
+  displayName: Install .NET Core SDK
   name: install_dotnetcore_sdk
   enabled: true
   inputs:
