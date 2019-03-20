@@ -34,16 +34,19 @@ steps:
     dotnet publish --configuration $(buildConfiguration) --output $BUILD_ARTIFACTSTAGINGDIRECTORY
 
 - task: PublishTestResults@2
+  displayName: PublishTestResults@2 
   condition: succeededOrFailed()
   inputs:
     testRunner: VSTest
     testResultsFiles: '**/*.trx'
 
 - task: PublishBuildArtifacts@1
+  displayName: PublishBuildArtifacts@1
 
 # is this superfluous?
 # I think not.. this zip is needed for web dpeloy
 - task: DotNetCoreCLI@2
+  displayName: DotNetCoreCli@2
   inputs:
     command: publish
     publishWebProjects: True
@@ -52,6 +55,7 @@ steps:
 
 ## Deploy to an existing Azure App Service k
 - task: AzureRmWebAppDeployment@3
+  displayName: AzureRmWebAppDeployment@3
   inputs:
     azureSubscription: 'pipelines-dotnet-core-connection'
     WebAppName: 'pipelinesdm2'
