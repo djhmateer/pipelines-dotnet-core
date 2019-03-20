@@ -15,13 +15,13 @@ variables:
 
 steps:
 # needed to run dotnetsay
-#- task: DotNetCoreInstaller@0
-# displayName: Install .NET Core SDK
- # name: install_dotnetcore_sdk
-  #enabled: true
-  #inputs:
-   # packageType: 'sdk'
-    #version: '2.2.101'
+- task: DotNetCoreInstaller@0
+ displayName: Install .NET Core SDK
+  name: install_dotnetcore_sdk
+  enabled: true
+  inputs:
+    packageType: 'sdk'
+    version: '2.2.101'
 
 # produces some nice ascii art in build output
 # on my local cached build agent this will error as it is already there
